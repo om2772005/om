@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+  
+  .navbar {
+    background-color: #333;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .navbar ul li {
+    display: inline-block;
+    margin: 14px 30px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .main {
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    background-image: url(https://i.pinimg.com/originals/79/a3/84/79a384c3c449ad01b0e57e790807b2c0.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:70%; /* Adjusted to cover the entire area */
+    color: black;
+    padding: 0.8%;
+    overflow: auto;
+    position: relative;
+    text-align: center; /* Center content */
+  }
+  
+  
+  #d {
+    color: black;
+    -webkit-text-stroke: 10px white;
+    font-size: 2500%;
+    position: absolute;
+    left: 10%;
+    top: -20%;
+    opacity: 0;
+    animation: fadein 3s forwards;
+  }
+  
+  
+  #dr{
+    color: #fff;
+    padding-left: 32px;
+    font-size: 500%;
+    position: absolute;
+    bottom: 32%;
+    left: 26%;
+    opacity: 0;
+    animation: fadein 5s forwards;
+  }
+  
+  #em{
+    color: white;
+    font-size: 450%;
+    position: absolute;
+    bottom:24%;
+    left:28%;
+    opacity: 0;
+    animation: fadein 5s forwards;
+  
+  
+  }
+  #loginb {
+    border-color: white;
+    font-size: 17px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    left: 87%;
+    bottom: 30%;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadein 5s forwards;
+  }
+  
+  #loginb:hover {
+    background-color: white;
+    color: red;
+  }
+  
+  #signup {
+    position: absolute;
+    font-size: 17px;
+    cursor: pointer;
+    left: 93%;
+    bottom: 30%;
+    opacity: 0;
+    animation: fadein 5s forwards;
+  }
+  
+  #signup:hover {
+    background-color: red;
+    color: white;
+  }
+  
+  @keyframes fadein {
+    to {
+        opacity: 1;
+    }
+  }
+  
+  /* Content Sections */
+  .content {
+    padding: 20px;
+    margin-top: 80px; /* Space below navbar */
+  }
+  
+  section {
+    margin-bottom: 100px; /* Space between sections */
+    padding: 20px; /* Padding inside each section */
+  }
+  
+  /* Section Headings */
+  section h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Sticky Navbar */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+  }
+  
+  /* About Section */
+  #aboutus {
+    color: white;
+    font-size: 45px;
+    margin: 49px auto; /* Centering */
+  }
+  
+  /* Who We Are Section */
+  #who {
+    color: white;
+    font-size: 30px;
+    margin: 20px auto; /* Centering */
+  }
+  
+  #whopra {
+    font-size: 20px;
+    margin: 20px auto; /* Centering */
+  }
+  
+  /* Download Section */
+  #download {
+    text-align: center;
+    padding: 20px;
+    margin-top: 34px; /* Space below previous section */
+  }
+  
+  #download-button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  #download-button:hover {
+    background-color: #005f75;
+    color: #fff;
+  }
+  
+  /* Contact Section */
+  #contact {
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px; /* Space below previous section */
+  }
+  
+  #contact-form {
+    display: inline-block;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  #contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  #contact-form button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  #contact-form button:hover {
+    background-color: #005f75;
+    color: #fff;
+  }
+  
+  /* Initial state of the animated items */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  /* Final state when items come into view */
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }

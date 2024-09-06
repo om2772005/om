@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar with Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <button id="loginb" onclick="location.href='login.html'">Login</button>
+            <button id="signup" onclick="location.href='sign.html'">Sign Up</button>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main" id="home">
+        <h1 id ="d" class="animate-on-scroll">D</h1>
+        <h3 id="dr" class="animate-on-scroll">ark</h3>
+        <h3 id="em" class="animate-on-scroll">reamer</h3>
+    </div>
+
+    <!-- About Section -->
+    <div class="content">
+        <section id="about">
+            <h1 id="aboutus" class="animate-on-scroll">About Us</h1>
+            <p class="animate-on-scroll">At Dark Pattern Buster, we believe in a fair, transparent, and user-centered web experience. Our mission is to empower internet users by exposing the deceptive design techniques, known as dark patterns, that manipulate behavior and obscure choices online.
+
+                With more websites and apps using sneaky tricks to pressure you into unwanted actions—whether it's subscribing to something you didn't mean to, or making it hard to unsubscribe—we decided it was time to fight back. Our extension detects and alerts you to dark patterns, giving you control over your browsing experience.</p>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download">
+            <h1 id="ours" class="animate-on-scroll">Download the Overpowered Extension</h1>
+            <p class="animate-on-scroll">Enhance your browsing experience with our powerful extension. It's designed to boost your productivity, improve security, and provide seamless integration with your favorite tools.</p>
+            <button id="download-button" class="animate-on-scroll">Download Now</button>
+            <p class="animate-on-scroll">Version 1.0.0 | Compatible with Chrome, Firefox, and Edge.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" action="contact.php" method="POST">
+            <h1 class="animate-on-scroll">Contact Us</h1>
+            <form id="contact-form" class="animate-on-scroll">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('contact-form');
+        
+                if (form) {
+                    form.addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent the default form submission
+                        
+                        const formData = new FormData(form); // Create FormData object
+        
+                        // Use Fetch API to submit the form
+                        fetch('contact.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json()) // Parse response as JSON
+                        .then(data => {
+                            if (data.status === 'success') {
+                                alert(data.message); // Display success message
+                                form.reset(); // Reset form fields
+                            } else {
+                                alert('Error: ' + data.message); // Display error message
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('An error occurred. Please try again.');
+                        });
+                    });
+                } else {
+                    console.error('Form with id "contact-form" not found.');
+                }
+            });
+        </script>
+        
+        
+        
+    </div>
+    
+
+</body>
+</html>
